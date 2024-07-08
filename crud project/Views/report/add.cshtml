@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model crud_project.Models.report
+
+<section class="reporthome">
+    <div class="card col-6">
+        <div class="card-body">
+            <form asp-controller="report" asp-action="add">
+                <div class="form-group my-3">
+                    <label class="pb-1">Name</label>
+                    <input asp-for="rName" class="form-control" />
+                    <span asp-validation-for="rName" class="text-danger"></span>
+                </div>
+                <div class="form-group my-3">
+                    <label class="pb-1">Report</label>
+                    <input asp-for="rReport" class="form-control" />
+                    <span asp-validation-for="rReport" class="text-danger"></span>
+                </div>
+                <div class="form-group my-3">
+                    <label class="pb-1">Rate</label>
+                    <input asp-for="Rate" class="form-control" />
+                    <span asp-validation-for="Rate" class="text-danger"></span>
+                </div>
+                <div class="form-group my-3">
+                    <label class="pb-2">Book ID</label>
+                     <select asp-for="bookid" class ="form-control" asp-items="ViewBag.bookid"></select>
+                </div>
+                <button name="send" class="btn"><a>Send Report</a></button>
+                <button type="submit" name="back" class="btn"><a asp-controller="home" asp-action="index">Back</a></button>
+            </form>
+        </div>
+    </div>
+
+</section>

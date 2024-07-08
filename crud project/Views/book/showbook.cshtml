@@ -1,0 +1,32 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+@model crud_project.Models.bookauthor
+
+
+<section class="profile">
+	
+
+	<div class="container col-md-5">
+		<h1 class="text-center mt-2 pt-2 ">Book Details</h1>
+
+			<div class="card">
+			<img src="~/img/217691.jpg" class="img-top" />
+				<div class="card-body bg-dark">
+					Book Name : @Html.DisplayFor(model => model.Book.Name)
+					<hr />
+					Author :  @Html.DisplayFor(model => model.Author.Name)
+					<hr />
+					Category : @Html.DisplayFor(model => model.Category.Name)
+					<hr />
+					<a asp-controller="book" asp-action="index" class="btn">Back</a>
+				</div>
+			</div>
+		
+
+	</div>
+</section>

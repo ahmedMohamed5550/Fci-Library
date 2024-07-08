@@ -1,0 +1,24 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model admin
+<section class="reporthome">
+    <div class="card col-6">
+        <div class="card-body">
+            <form asp-controller="login" asp-action="index">
+                <div class="form-group my-3">
+                    <label class="pb-1">Email</label>
+                    <input type="text" class="form-control" name="email">
+                </div>
+                <div class="form-group my-3">
+                    <label class="pb-1">Password</label>
+                    <input type="password" class="form-control" name="password">
+                </div>
+                <button type="submit" name="send" class="btn"><a>Login</a></button>
+            </form>
+        </div>
+    </div>
+
+</section>

@@ -1,0 +1,23 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model crud_project.Models.category
+
+<section class="borrowhome">
+    <div class="card col-6">
+        <div class="card-body">
+            <form asp-controller="admin" asp-action="editcategory">
+                <div class="form-group my-3">
+                    <label class="pb-1">Category Name</label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <button name="send" type="submit" class="btn"><a>Add Category</a></button>
+                <button type="submit" name="back" class="btn"><a asp-controller="admin" asp-action="listcategory">Back</a></button>
+            </form>
+        </div>
+    </div>
+
+</section>

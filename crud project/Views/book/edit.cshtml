@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model crud_project.Models.bookauthor
+
+<section class="borrowhome">
+    <div class="card col-6">
+        <div class="card-body">
+            <form asp-controller="book" asp-action="edit">
+                <div class="form-group my-3">
+                    <label class="pb-1">Book Name</label>
+                    <select asp-for="bookid" class="form-control" asp-items="ViewBag.bookid"></select>
+                    <span asp-validation-for="bookid" class="text-danger"></span>
+                </div>
+                <div class="form-group my-3">
+                    <label class="pb-1">Author ID</label>
+                    <select asp-for="authorid" class="form-control" asp-items="ViewBag.authorid"></select>
+                    <span asp-validation-for="authorid" class="text-danger"></span>
+                </div>
+                <div class="form-group my-3">
+                    <label class="pb-1">Categoryid Id</label>
+                    <select asp-for="categoryid" class="form-control" asp-items="ViewBag.categoryid"></select>
+                    <span asp-validation-for="categoryid" class="text-danger"></span>
+                </div>
+
+                <button name="send" class="btn"><a asp-controller="book" asp-action="index">Send Data</a></button>
+                <button name="back" class="btn"><a asp-controller="book" asp-action="index">Back</a></button>
+            </form>
+        </div>
+    </div>
+
+</section>

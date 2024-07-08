@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model crud_project.Models.borrow
+
+<section class="borrowhome">
+    <div class="card col-6">
+        <div class="card-body">
+            <form asp-controller="book" asp-action="borrow">
+                <div class="form-group my-3">
+                    <label class="pb-1">Name</label>
+                    <input asp-for="Name" class="form-control" />
+                </div>
+                <div class="form-group my-3">
+                    <label class="pb-1">Borrowing period</label>
+                    <input asp-for="borrowing_period" class="form-control" />
+                </div>
+                <div class="form-group my-3">
+                    <label class="pb-1">Book Id</label>
+                    <select asp-for="bookid" class="form-control" value="@ViewBag.bookid" asp-items="ViewBag.bookid"></select>
+                </div>
+                <div class="form-group my-3">
+                    <label class="pb-1">Student Email</label>
+                    <select asp-for="studentid" class="form-control" asp-items="ViewBag.studentid"></select>
+                </div>
+                <button name="send" class="btn"><a>Send Data</a></button>
+                <button type="submit" name="back" class="btn"><a asp-controller="book" asp-action="index">Back</a></button>
+            </form>
+        </div>
+    </div>
+
+</section>

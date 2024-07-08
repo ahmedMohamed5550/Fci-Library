@@ -1,0 +1,57 @@
+﻿@model IEnumerable<crud_project.Models.borrow>
+<section class="bookhome">
+
+    <div class="container col-9">
+        <div class="card">
+            <div class="card-body text-center">
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Borrowing Period</th>
+                            <th>Book Id</th>
+                            <th>Student Email</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Id)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.borrowing_period)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Book.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Student.email)
+                                </td>
+                                
+                                <td><a onclick="return confirm('Are You Sure ?')" asp-controller="book" asp-action="Deleteborrowinglist" asp-route-id="@item.Id" class="btn">Remove</a></td>
+                                
+
+                            </tr>
+                        }
+                    </tbody>
+
+
+
+
+
+                </table>
+                <button type="submit" name="back" class="btn px-3"><a asp-controller="admin" asp-action="index">Back</a></button>
+            </div>
+        </div>
+
+
+    </div>
+</section>
